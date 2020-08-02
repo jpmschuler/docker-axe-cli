@@ -11,4 +11,5 @@ runAxe:
     paths:
       - .cache/
   script:
+    - apt install nodejs
     - npm run test
