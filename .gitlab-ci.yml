@@ -1,0 +1,14 @@
+variables:
+  npm_config_cache: .cache/npm-cache/
+  COMPOSER_CACHE_DIR: .cache/composer/
+  YARN_CACHE_FOLDER: .cache/yarn/
+
+runAxe:
+  image: selenium/node-chrome:84.0
+  # package managers should use global cache for speedup
+  cache:
+    key: package-manager-cache
+    paths:
+      - .cache/
+  script:
+    - npm run test
